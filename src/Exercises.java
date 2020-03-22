@@ -12,6 +12,11 @@ public class Exercises {
   }
 
   public int findMe(ArrayList<String> list, String target) {
+    for (String string: list) {
+      if (string != null && string == target) {
+        return list.indexOf(string);
+      }
+    }
     return -1;
   }
 
