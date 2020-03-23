@@ -186,10 +186,10 @@ public class Exercises {
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
-    return null;
+    return list;
   }
 
   public String[] merge(String[] list, boolean ascending) {
-    return null;
+    return list;
   }
 }
