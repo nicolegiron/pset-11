@@ -68,7 +68,7 @@ public class Exercises {
             }
         }
         if(ascending == false){
-          Collections.reverse(list);
+          Collections.reverse(Arrays.asList(list));
           return list;
         } else {
           return list;
@@ -95,20 +95,46 @@ public class Exercises {
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-    for (int j = 1; j < list.size(); j++) {
-        int current = list.get(j);
-        int i = j-1;
-        while ((i > -1) && (list.get(i) > current)) {
-            list.set(list.get(i+1), list.get(i));
-            i--;
+    for(int i = 1; i < list.size(); i++) {
+            int key = list.get(i);
+            for(int j = i - 1; j >= 0; j--){
+                if(key < list.get(j)) {
+                    list.set(j+1, list.get(j));
+                    if(j==0) {
+                        list.set(0, key);
+                    }
+                } else {
+                    list.set(j+1,key);
+                    break;
+                }
+            }
         }
-        list.set(list.get(i+1), current);
-    }
-    return list;
+        if(ascending == false){
+          Collections.reverse(list);
+          return list;
+        } else {
+          return list;
+        }
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-    return null;
+    // int n = list.length;
+    //     for (int i=1; i<n; ++i)
+    //     {
+    //         String key = list[i];
+    //         int j = i-1;
+    //
+    //         /* Move elements of arr[0..i-1], that are
+    //            greater than key, to one position ahead
+    //            of their current position */
+    //         while (j>=0 && list[j] > key)
+    //         {
+    //             list[j+1] = list[j];
+    //             j = j-1;
+    //         }
+    //         list[j+1] = key;
+    //     }
+        return list;
   }
 
   public int[] selection(int[] list, boolean ascending) {
