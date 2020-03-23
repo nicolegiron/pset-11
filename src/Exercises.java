@@ -118,7 +118,7 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-    String temp="";
+    String temp = "";
     for(int i =  0; i < list.length; i++) {
       for(int j = i + 1; j < list.length; j++) {
         if(list[i].compareToIgnoreCase(list[j])>0) {
@@ -128,11 +128,28 @@ public class Exercises {
         }
       }
     }
-    return list;
+    if(ascending == false){
+      Collections.reverse(Arrays.asList(list));
+      return list;
+    } else {
+      return list;
+    }
   }
 
   public int[] selection(int[] list, boolean ascending) {
-    return null;
+    int n = list.length;
+        for (int i = 0; i < n-1; i++) {
+            int min = i;
+            for (int j = i+1; j < n; j++) {
+                if (list[j] < list[min]){
+                    min = j;
+                }
+            }
+          int temp = list[min];
+          list[min] = list[i];
+          list[i] = temp;
+        }
+      return list;
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
