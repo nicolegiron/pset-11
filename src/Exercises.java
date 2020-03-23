@@ -67,7 +67,12 @@ public class Exercises {
                 }
             }
         }
-    return list;
+        if(ascending == false){
+          Collections.reverse(list);
+          return list;
+        } else {
+          return list;
+        }
   }
 
   public ArrayList<String> bubble(ArrayList<String> list, boolean ascending) {
@@ -81,11 +86,25 @@ public class Exercises {
                 }
             }
         }
-    return list;
+    if(ascending == false){
+      Collections.reverse(list);
+      return list;
+    } else {
+      return list;
+    }
   }
 
   public ArrayList<Integer> insertion(ArrayList<Integer> list, boolean ascending) {
-    return null;
+    for (int j = 1; j < list.size(); j++) {
+        int current = list.get(j);
+        int i = j-1;
+        while ((i > -1) && (list.get(i) > current)) {
+            list.set(list.get(i+1), list.get(i));
+            i--;
+        }
+        list.set(list.get(i+1), current);
+    }
+    return list;
   }
 
   public String[] insertion(String[] list, boolean ascending) {
