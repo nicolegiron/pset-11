@@ -140,16 +140,27 @@ public class Exercises {
     int n = list.length;
         for (int i = 0; i < n-1; i++) {
             int min = i;
-            for (int j = i+1; j < n; j++) {
-                if (list[j] < list[min]){
-                    min = j;
+            if(ascending){
+              for (int j = i + 1; j < n; j++) {
+                  if (list[j] < list[min]){
+                      min = j;
+                  }
+              }
+              int temp = list[min];
+              list[min] = list[i];
+              list[i] = temp;
+            } else {
+              for (int j = i + 1; j < n; j++) {
+                if (list[j] > list[min]) {
+                  min = j;
                 }
+              }
+              int temp = list[i];
+              list[i] = list[min];
+              list[min] = temp;
             }
-          int temp = list[min];
-          list[min] = list[i];
-          list[i] = temp;
         }
-      return list;
+        return list;
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
