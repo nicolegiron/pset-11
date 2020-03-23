@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
 public class Exercises {
 
@@ -32,7 +33,15 @@ public class Exercises {
   }
 
   public int findMeFaster(ArrayList<Integer> list, int target) {
-    return -1;
+    if (list == null ||  list.size() == 0) {
+      return -1;
+    }
+    int binary = Collections.binarySearch(list, target);
+    if(binary < 0){
+      return -1;
+    } else {
+      return binary;
+    }
   }
 
   public int findMeFaster(String[] list, String target) {
