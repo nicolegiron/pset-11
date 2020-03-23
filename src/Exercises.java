@@ -118,23 +118,17 @@ public class Exercises {
   }
 
   public String[] insertion(String[] list, boolean ascending) {
-    // int n = list.length;
-    //     for (int i=1; i<n; ++i)
-    //     {
-    //         String key = list[i];
-    //         int j = i-1;
-    //
-    //         /* Move elements of arr[0..i-1], that are
-    //            greater than key, to one position ahead
-    //            of their current position */
-    //         while (j>=0 && list[j] > key)
-    //         {
-    //             list[j+1] = list[j];
-    //             j = j-1;
-    //         }
-    //         list[j+1] = key;
-    //     }
-        return list;
+    String temp="";
+    for(int i =  0; i < list.length; i++) {
+      for(int j = i + 1; j < list.length; j++) {
+        if(list[i].compareToIgnoreCase(list[j])>0) {
+          temp = list[i];
+          list[i] = list[j];
+          list[j] = temp;
+        }
+      }
+    }
+    return list;
   }
 
   public int[] selection(int[] list, boolean ascending) {
