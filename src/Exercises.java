@@ -160,11 +160,29 @@ public class Exercises {
               list[min] = temp;
             }
         }
-        return list;
+      return list;
   }
 
   public ArrayList<String> selection(ArrayList<String> list, boolean ascending) {
-    return null;
+    int n = list.size();
+    for (int i = 0; i < n - 1; i++) {
+      for (int j = i + 1; j < n; j++) {
+        if(ascending){
+          if (list.get(i).compareTo(list.get(j)) > 0) {
+            String temp = list.get(j);
+            list.set(j, list.get(i));
+            list.set(i, temp);
+          }
+        }else{
+          if (list.get(i).compareTo(list.get(j)) < 0) {
+            String temp = list.get(j);
+            list.set(j, list.get(i));
+            list.set(i, temp);
+          }
+        }
+      }
+    }
+    return list;
   }
 
   public ArrayList<Integer> merge(ArrayList<Integer> list, boolean ascending) {
