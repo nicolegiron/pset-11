@@ -1,20 +1,31 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Exercises {
 
   public int findMe(int[] list, int target) {
-     for (int number: list) {
-       if (number != null && target == number) {
-         return list.indexOf(list);
-       }
-     }
-     return -1;
+    if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
+      return -1;
+    }
+    int i = 0;
+    for(int number : list){
+      if(number == target){
+        return i;
+      } else {
+        i++;
+      }
+    }
+
+    return -1;
   }
 
   public int findMe(ArrayList<String> list, String target) {
-    for (String string: list) {
-      if (string != null && string == target) {
-        return list.indexOf(string);
+    if (list == null ||  list.size() == 0 || target == null) {
+      return -1;
+    }
+    for(int i = 0; i < list.size(); i++){
+      if(list.get(i).equals(target)){
+        return i;
       }
     }
     return -1;
