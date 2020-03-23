@@ -48,7 +48,12 @@ public class Exercises {
     if (Arrays.asList(list).contains(null) || Arrays.asList(list) == null) {
       return -1;
     }
-    return -1;
+    int binary = Arrays.binarySearch(list, target);
+    if(binary < 0){
+      return -1;
+    } else {
+      return binary;
+    }
   }
 
   public int[] bubble(int[] list, boolean ascending) {
